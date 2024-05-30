@@ -2,14 +2,8 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/")
-async def root():
-    return {"greeting": "Hello, World!", "message": "Welcome to FastAPI!"}
-
-
 from transformers import AutoProcessor, MusicgenForConditionalGeneration
 import requests, scipy, torch, threading
-app = Flask(__name__)
 
 model = MusicgenForConditionalGeneration.from_pretrained("facebook/musicgen-small")
 processor = AutoProcessor.from_pretrained("facebook/musicgen-small")
